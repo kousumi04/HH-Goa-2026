@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: #08462d;
+}
+
+.landing {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background-image: url("../images/Sun rise.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.wordmark {
+  position: absolute;
+  top: clamp(18px, 3vw, 34px);
+  left: 50%;
+  width: min(80vw, 922px);
+  max-width: none;
+  height: auto;
+  transform: translateX(-50%);
+  display: block;
+}
+
+.goa-mark {
+  position: absolute;
+  top: clamp(82px, 9.4vw, 126px);
+  left: 50%;
+  width: clamp(82px, 12.6vw, 145px);
+  height: auto;
+  display: block;
+  transform: translateX(-50%);
+}
