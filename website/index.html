@@ -14,6 +14,25 @@
         alt="Hacker House"
       />
       <img class="goa-mark" src="../images/goa_hindi.svg" alt="Goa" />
+      <button class="scooter-button" type="button" aria-label="Upload a picture">
+        <span class="click-bubble">click me</span>
+        <img src="../images/scooter.png" alt="" />
+      </button>
+
+      <dialog class="upload-dialog" aria-labelledby="upload-title">
+        <form class="upload-form" method="dialog">
+          <h2 id="upload-title">Upload your picture</h2>
+          <label class="file-field">
+            <span>Your photo</span>
+            <input type="file" accept="image/*" required />
+          </label>
+          <div class="dialog-actions">
+            <button class="cancel-button" type="button">Cancel</button>
+            <button class="confirm-button" type="submit">Confirm upload</button>
+          </div>
+        </form>
+      </dialog>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
