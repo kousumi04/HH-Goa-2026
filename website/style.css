@@ -1,0 +1,255 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: #08462d;
+}
+
+.landing {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background-image: url("../images/Sun rise.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.agenda-page {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: clamp(12px, 2vh, 22px);
+  padding: clamp(18px, 3vh, 34px) 18px;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #08462d;
+}
+
+.agenda-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("../images/transparent-details.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.profile-card {
+  position: relative;
+  z-index: 1;
+  width: min(88vw, 850px);
+  max-height: 78vh;
+  transform: translateY(-3vh);
+}
+
+.profile-frame {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.photo-mask {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  width: 42%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  background: #06180e;
+}
+
+.uploaded-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.social-icons {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(26px, 5vw, 54px);
+  margin-top: clamp(-18px, -2vh, -10px);
+}
+
+.social-icons img {
+  display: block;
+  width: clamp(34px, 4vw, 48px);
+  height: auto;
+}
+
+.wordmark {
+  position: absolute;
+  top: clamp(18px, 3vw, 34px);
+  left: 50%;
+  width: min(84vw, 968px);
+  max-width: none;
+  height: auto;
+  transform: translateX(-50%);
+  display: block;
+}
+
+.goa-mark {
+  position: absolute;
+  top: clamp(78px, 8.4vw, 114px);
+  left: 50%;
+  width: clamp(58px, 7.8vw, 90px);
+  height: auto;
+  display: block;
+  transform: translateX(-5%);
+}
+
+.scooter-button {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  width: clamp(108px, 15vw, 178px);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  animation: scooter-arrive 4.8s cubic-bezier(0.18, 0.88, 0.32, 1) both;
+}
+
+.scooter-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 12px rgba(0, 42, 26, 0.3));
+}
+
+.scooter-button.is-exiting {
+  pointer-events: none;
+  animation: scooter-exit 1.8s ease-in forwards;
+}
+
+.click-bubble {
+  position: absolute;
+  right: 8%;
+  bottom: calc(100% - 4px);
+  z-index: 1;
+  padding: 7px 10px;
+  border: 2px solid #ff0080;
+  border-radius: 4px;
+  background: #fee101;
+  color: #08462d;
+  font-family: "Courier New", "Lucida Console", monospace;
+  font-size: clamp(0.72rem, 1.2vw, 0.9rem);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: 4px 4px 0 #ff0080;
+}
+
+.upload-dialog {
+  width: min(90vw, 380px);
+  padding: 0;
+  border: 3px solid #ff0080;
+  border-radius: 6px;
+  background: #fee101;
+  color: #07391f;
+  box-shadow: 10px 10px 0 #ff0080;
+}
+
+.upload-dialog::backdrop {
+  background: rgba(0, 38, 22, 0.55);
+}
+
+.upload-form {
+  display: grid;
+  gap: 18px;
+  padding: 22px;
+  font-family: "Courier New", "Lucida Console", monospace;
+}
+
+.upload-form h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.file-field {
+  display: grid;
+  gap: 8px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.file-field input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #07391f;
+  background: #ffffff;
+  font: inherit;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.dialog-actions button {
+  min-height: 38px;
+  border: 2px solid #07391f;
+  border-radius: 4px;
+  padding: 0 12px;
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.cancel-button {
+  background: #ffffff;
+  color: #07391f;
+}
+
+.confirm-button {
+  background: #ff0080;
+  color: #ffffff;
+}
+
+@keyframes scooter-arrive {
+  from {
+    transform: translate(70vw, -50%);
+  }
+
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes scooter-exit {
+  from {
+    transform: translate(-50%, -50%);
+  }
+
+  to {
+    transform: translate(-120vw, -50%);
+  }
+}

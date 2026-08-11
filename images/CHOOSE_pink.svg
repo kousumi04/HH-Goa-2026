@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200" height="400" viewBox="0 0 1200 400">
+  <style>
+    text {
+      font-family: "Bodoni Moda", "Bodoni 72", "Didot", "GFS Didot", serif;
+      font-weight: 400;
+      fill: #F9007C;
+    }
+  </style>
+  <text x="857.142" y="315" transform="translate(0 0) scale(0.70 1)"
+        text-anchor="middle"
+        font-size="310px"
+        letter-spacing="2px">CHOOSE</text>
+</svg>
