@@ -33,8 +33,21 @@ body {
   background: #08462d;
 }
 
+.agenda-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("../images/transparent-details.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
 .profile-card {
   position: relative;
+  z-index: 1;
   width: min(88vw, 850px);
   max-height: 78vh;
   transform: translateY(-3vh);
@@ -71,6 +84,8 @@ body {
 }
 
 .social-icons {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
