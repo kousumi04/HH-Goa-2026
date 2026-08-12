@@ -64,14 +64,13 @@ body {
 
 .photo-mask {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  inset: 0; /* Replaces top: 50%; left: 50%; */
+  margin: auto; /* Handles the centering dynamically */
   z-index: 0;
   width: 42%;
   aspect-ratio: 1;
   border-radius: 50%;
   overflow: hidden;
-  transform: translate(-50%, -50%);
   background: #06180e;
 }
 
