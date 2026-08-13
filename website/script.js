@@ -108,7 +108,7 @@ if (uploadedPhoto) {
   if (xButton) {
     xButton.style.cursor = "pointer";
     xButton.addEventListener("click", async () => {
-      const tweetText = "The hype is real!!\nHacker House Goa 2026 \n\n#FrameInGoa";
+      const tweetText = "I am building for Hacker House Goa @247pmstudio\n#FameInGoa";
       const xWindow = window.open("", "_blank");
 
       try {

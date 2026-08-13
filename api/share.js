@@ -6,7 +6,7 @@ export default function handler(request, response) {
   }
 
   const safeImageUrl = escapeHtml(imageUrl);
-  const description = "The hype is real!! Hacker House Goa 2026 #FrameInGoa";
+  const description = "I am building for Hacker House Goa @247pmstudio #FameInGoa";
 
   const html = `<!DOCTYPE html>
 <html lang="en">
