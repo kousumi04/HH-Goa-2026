@@ -1,3 +1,4 @@
+Deployed link: https://hh-goa-2026-one-flame.vercel.app/
 ## Local setup
 
 ```bash
