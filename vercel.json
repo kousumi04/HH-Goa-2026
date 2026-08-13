@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/website/landing_page.html"
+    },
+    {
+      "source": "/agenda.html",
+      "destination": "/website/agenda.html"
+    },
+    {
+      "source": "/script.js",
+      "destination": "/website/script.js"
+    },
+    {
+      "source": "/style.css",
+      "destination": "/website/style.css"
+    }
+  ]
+}

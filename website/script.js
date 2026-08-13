@@ -107,10 +107,43 @@ if (uploadedPhoto) {
   // X (Twitter) Share binding
   if (xButton) {
     xButton.style.cursor = "pointer";
-    xButton.addEventListener("click", () => {
-      const tweetText = encodeURIComponent("The hype is real!!\nHacker House Goa 2026 \n\n#FrameInGoa");
-      const twitterUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;
-      window.open(twitterUrl, "_blank");
+    xButton.addEventListener("click", async () => {
+      const tweetText = "I am building for Hacker House Goa @247pmstudio\n#FameInGoa";
+      const xWindow = window.open("", "_blank");
+
+      try {
+        const dataUrl = await generateFinalImage();
+
+        if (!dataUrl) {
+          xWindow?.close();
+          return;
+        }
+
+        const uploadResponse = await fetch("/api/create-share", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ dataUrl })
+        });
+
+        if (!uploadResponse.ok) {
+          throw new Error("Image upload failed");
+        }
+
+        const { shareUrl } = await uploadResponse.json();
+        const xUrl =
+          `https://x.com/intent/post?text=${encodeURIComponent(tweetText)}` +
+          `&url=${encodeURIComponent(shareUrl)}`;
+
+        if (xWindow) {
+          xWindow.location.href = xUrl;
+        } else {
+          window.location.href = xUrl;
+        }
+      } catch (error) {
+        console.error("Could not prepare X share:", error);
+        xWindow?.close();
+        alert("Could not prepare the image for sharing. Please try again.");
+      }
     });
   }
 }
